@@ -1,7 +1,8 @@
-import dataclasses
+from dataclasses import dataclass
 
 
-@dataclasses.dataclass
+@dataclass
 class Player:
     name: str
+    color: any
     holding_pieces: list = None
