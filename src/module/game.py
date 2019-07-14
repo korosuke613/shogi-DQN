@@ -42,4 +42,11 @@ class Game:
             print(f'>> Turn is {self.get_now_player().name}')
             usi = self.listen_usi()
             self.board.move_piece(usi)
+
+            if self.board.is_checkmate() is True or self.board.was_suicide() is True:
+                if self.board.was_suicide() is True:
+                    self.change_next_player()
+                print()
+                print(f'WINNER is {self.get_now_player().name}')
+                return
             self.change_next_player()
