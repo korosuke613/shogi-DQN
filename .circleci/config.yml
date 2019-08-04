@@ -18,7 +18,7 @@ jobs:
             sudo pip install pipenv
             pipenv install --dev
       - run: PYTHONPATH=./src pipenv run pytest --cov src --cov-branch
-      - run: coveralls
+      - run: pipenv run coveralls
       - store_test_results:
           path: test-results
       - store_artifacts:
