@@ -18,7 +18,7 @@ jobs:
             sudo pip install pipenv
             pipenv install --dev
       - run: PYTHONPATH=./src pipenv run pytest --cov src --cov-branch
-      - run: pipenv run COVERALLS_REPO_TOKEN=mRrgTd9G604GEikTj4FQyiW9jGOgRBpSb coveralls
+      - run: COVERALLS_REPO_TOKEN=mRrgTd9G604GEikTj4FQyiW9jGOgRBpSb pipenv run coveralls
       - run: mkdir test-results
       - run: PYTHONPATH=./src pipenv run pytest --cov src --cov-branch --junitxml=test-results/junit.xml
       - store_test_results:
