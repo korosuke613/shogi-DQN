@@ -2,7 +2,7 @@ from usi import Usi
 
 
 def test_convert_usi2num():
-    usi = Usi("4i5i+")
+    usi = Usi("4i5i")
     assert usi.from_point == '4i'
     assert usi.from_point_num == 77
     assert usi.to_point == '5i'
