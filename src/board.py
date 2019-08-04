@@ -16,11 +16,14 @@ class Board:
         return self.board.was_suicide()
 
     def is_correct_usi(self, usi_original, color):
-        usi = Usi(usi_original)
-        attackers = self.board.attackers(color, usi.to_point_num)
-        if usi.from_point_num in attackers:
-            return True
-        return False
+        try:
+            usi = Usi(usi_original)
+            attackers = self.board.attackers(color, usi.to_point_num)
+            if usi.from_point_num in attackers:
+                return True
+            return False
+        except KeyError:
+            return False
 
     def move_piece(self, usi):
         self.board.push(shogi.Move.from_usi(usi))

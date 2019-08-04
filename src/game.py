@@ -25,13 +25,15 @@ class Game:
         """
         return self.players[self.now_player_index]
 
-    def listen_usi(self):
+    def listen_usi(self, is_test=False):
         while True:
             usi = input()
             if self.board.is_correct_usi(usi, self.get_now_player().color):
                 return usi
             else:
                 print("Don't correct usi!")
+            if is_test:
+                break
 
     def start(self):
         """start game
