@@ -1,5 +1,5 @@
 import shogi
-from .usi import Usi
+from usi import Usi
 
 
 class Board:
