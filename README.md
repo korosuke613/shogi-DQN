@@ -12,6 +12,5 @@ pipenv install
 ## Run
 
 ```bash
-pipenv shell
-jupyter-notebook
+pipenv run src/run.py
 ```
