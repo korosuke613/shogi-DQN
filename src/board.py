@@ -3,8 +3,8 @@ from usi import Usi
 
 
 class Board:
-    def __init__(self):
-        self.board = shogi.Board()
+    def __init__(self, sfen=None):
+        self.board = shogi.Board(sfen)
     
     def print(self):
         print(self.board.kif_str())
