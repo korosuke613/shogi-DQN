@@ -19,6 +19,7 @@ jobs:
             pipenv install --dev
       - run: PYTHONPATH=./src pipenv run pytest --cov src --cov-branch
       - run: pipenv run coveralls
+      - run: PYTHONPATH=./src pipenv run pytest --cov src --cov-branch --junitxml=test-results/junit.xml
       - store_test_results:
           path: test-results
       - store_artifacts:
