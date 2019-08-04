@@ -11,7 +11,8 @@ autopep8 = "*"
 python-shogi = "*"
 pytest = "*"
 pytest-cov = "*"
-python-coveralls = "*"
+coverage = "*"
+coveralls = "*"
 
 [requires]
 python_version = "3.7"
