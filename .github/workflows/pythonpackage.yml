@@ -9,7 +9,7 @@ jobs:
     strategy:
       max-parallel: 3
       matrix:
-        python-version: [3.5, 3.6, 3.7]
+        python-version: [3.7]
 
     steps:
     - uses: actions/checkout@master
@@ -25,4 +25,11 @@ jobs:
       run: |
         pipenv install --python python --dev
     - name: Test with pytest
-      run: PYTHONPATH=./src pipenv run pytest --cov src --cov-branch
+      run: PYTHONPATH=./src pipenv run pytest --cov=./ src --cov-branch --cov-report=xml
+    - name: Upload coverage to Codecov  
+      uses: codecov/codecov-action@v1.0.0
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella 
